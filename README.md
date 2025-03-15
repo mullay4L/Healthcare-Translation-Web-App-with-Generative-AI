@@ -1,45 +1,31 @@
 # Healthcare Translation Web App with Generative AI
 
 ## Overview
-This project is a **Healthcare Translation Web App** powered by **Generative AI** to provide real-time voice-to-text transcription and translation, with a focus on medical terminology.
+A web-based prototype for real-time multilingual translation between patients and healthcare providers, built in <24 hours using generative AI for Nao Medical’s pre-interview assignment.
+
+## Live Demo
+- **URL:** healthcareai-ashy.vercel.app
 
 ## Features
-- **Voice-to-Text**: Uses Web Speech API for speech recognition.
-- **Real-Time Translation**: AI-powered translation with accurate handling of medical terminology.
-- **Audio Playback**: Listen to translations via text-to-speech.
-- **Mobile-First Design**: Fully responsive for both mobile and desktop use.
-- **Secure Handling of Sensitive Data**: `.env` file ensures API keys are not exposed.
+- **Voice-to-Text:** Real-time transcription via Web Speech API, optimized for medical terms.
+- **Real-Time Translation:** Powered by OpenAI API for accurate multilingual translation.
+- **Audio Playback:** Text-to-speech playback of translations using Web Speech Synthesis.
+- **Mobile-First Design:** Responsive UI built with Tailwind CSS and V0 for mobile and desktop.
+- **Security:** HTTPS via Vercel, no persistent data storage (client-side processing).
+
+## Tech Stack
+- **Frontend:** React, Vite, Tailwind CSS (via V0)
+- **AI Tools:** OpenAI API (translation), V0 (UI generation), Grok by xAI (coding assistance)
+- **Deployment:** Vercel
 
 ## Installation
 ### Prerequisites
-Ensure you have the following installed:
-- **pnpm** (Preferred package manager)
-- **Node.js** (Recommended: v18+)
+- **Node.js** (v18+ recommended)
+- **npm** (or pnpm, yarn, bun)
 
-### Installing Dependencies
-Since this project uses `pnpm`, install dependencies using:
+### Setup
+Clone the repo and install dependencies:
 ```bash
-pnpm install
-```
-If you prefer `npm`, remove `pnpm-lock.yaml` and run:
-```bash
+git clone <your-github-repo-url>
+cd <repo-name>
 npm install
-```
-
-## Running the Application
-To start the development server:
-```bash
-pnpm start
-```
-For npm:
-```bash
-npm start
-```
-
-## Environment Variables
-Create a `.env` file in root folder and add the required API keys:
-```
-REACT_APP_API_KEY=your-api-key-here
-```
-
-

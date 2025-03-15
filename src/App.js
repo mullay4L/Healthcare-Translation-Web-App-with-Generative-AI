@@ -93,7 +93,7 @@ export default function App() {
             messages: [
               {
                 role: "system",
-                content: `You are a translation assistant. Translate the following text from ${inputLanguage} to ${outputLanguage}.`,
+                content: `You are a professional healthcare translation assistant. Translate the following text from ${inputLanguage} to ${outputLanguage}, ensuring medical terms, abbreviations and context are accurately preserved. Use medically appropriate terminology and avoid literal translations that may change the meaning in a clinical setting`,
               },
               { role: "user", content: inputText },
             ],

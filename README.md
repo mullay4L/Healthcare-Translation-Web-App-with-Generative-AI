@@ -37,21 +37,10 @@ npm start
 ```
 
 ## Environment Variables
-Create a `.env` file and add the required API keys:
+Create a `.env` file in root folder and add the required API keys:
 ```
 REACT_APP_API_KEY=your-api-key-here
 ```
-**Note:** Ensure `.env` is included in `.gitignore` to prevent exposing sensitive data.
-
-## Deployment
-This project can be deployed on platforms like **Vercel** or **V0**. To deploy:
-1. **Export your CodeSandbox project to GitHub**.
-2. **Connect GitHub to Vercel/V0** and deploy the repository.
-
-## Security Considerations
-- API keys should never be hardcoded in the repository.
-- No data is stored permanently.
-- Consider adding session timeouts for added privacy.
 
 ## Contributing
 1. Fork the repository.
@@ -60,9 +49,4 @@ This project can be deployed on platforms like **Vercel** or **V0**. To deploy:
 4. Push to your branch (`git push origin feature-name`).
 5. Open a Pull Request.
 
-## License
-This project is licensed under the MIT License.
-
----
-Let me know if you need any modifications! 🚀
 

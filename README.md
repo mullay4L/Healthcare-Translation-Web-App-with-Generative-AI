@@ -11,7 +11,7 @@ A web-based prototype for real-time multilingual translation between patients an
 - **Real-Time Translation:** Powered by OpenAI API for accurate multilingual translation.
 - **Audio Playback:** Text-to-speech playback of translations using Web Speech Synthesis.
 - **Mobile-First Design:** Responsive UI built with Tailwind CSS and V0 for mobile and desktop.
-- **Security:** HTTPS via Vercel, no persistent data storage (client-side processing).
+- **Security:** HTTPS via Vercel, no persistent data storage (client-side processing), Session Timeout to prevent sensitive data laying around.
 
 ## Tech Stack
 - **Frontend:** React, Vite, Tailwind CSS (via V0)

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 
-const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+// const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
 export default function App() {
   const [recognition, setRecognition] = useState(null);
@@ -86,14 +86,14 @@ export default function App() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${apiKey}`,
+            Authorization: `Bearer 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`,
           },
           body: JSON.stringify({
             model: "gpt-4-turbo",
             messages: [
               {
                 role: "system",
-                content: `You are a professional healthcare translation assistant. Translate the following text from ${inputLanguage} to ${outputLanguage}, ensuring medical terms, abbreviations and context are accurately preserved. Use medically appropriate terminology and avoid literal translations that may change the meaning in a clinical setting`,
+                content: `You are a professional healthcare translation assistant. Translate the following text from ${inputLanguage} to ${outputLanguage}, ensuring medical terms, abbreviations, and context are accurately translated. Expand all medical abbreviations into their full forms while keeping the translation medically precise and contextually appropriate.`,
               },
               { role: "user", content: inputText },
             ],
@@ -103,6 +103,8 @@ export default function App() {
       );
 
       const data = await response.json();
+      console.log("API response:", data);
+
       setTranslatedText(data.choices[0].message.content);
     } catch (error) {
       console.error("Translation error:", error);
@@ -122,6 +124,25 @@ export default function App() {
     speech.lang = outputLanguage;
     window.speechSynthesis.speak(speech);
   };
+
+  useEffect(() => {
+    let timeout;
+    const resetTimer = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        alert("Session expired due to inactivity");
+        // Clear sensitive data or log the user out
+        setInputText("");
+        setTranslatedText("");
+      }, 600000); // Timeout after 10 minutes of inactivity
+    };
+
+    window.onload = resetTimer;
+    document.onmousemove = resetTimer;
+    document.onkeydown = resetTimer;
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <div className="App">
@@ -189,6 +210,7 @@ export default function App() {
             >
               Speak Translation
             </button>
+            <div className="disclaimer"></div>
           </div>
         </div>
       </div>

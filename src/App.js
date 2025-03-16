@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 
-// const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+const apiKey = process.env.REACT_APP_OPENAI_API_KEY;  // Updated for React's environment variable syntax
+
+
 
 export default function App() {
   const [recognition, setRecognition] = useState(null);
@@ -86,8 +88,8 @@ export default function App() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
-          },
+            "Authorization": `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`
+          },          
           body: JSON.stringify({
             model: "gpt-4-turbo",
             messages: [
